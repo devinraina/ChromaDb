@@ -10,7 +10,7 @@ client = chromadb.Client()
 collection = client.get_or_create_collection("oscars-2023")
 
 df=pd.read_csv('./data/the_oscar_award.csv')
-df=df.loc[df['year_ceremony'] == 2023]
+df=df.loc[df['year_ceremony'] >= 2000]
 df=df.dropna(subset=['film'])
 df.loc[:, 'category'] = df['category'].str.lower()
 df.loc[:, 'text'] = df['name'] + ' got nominated under the category, ' + df['category'] + ', for the film ' + df['film'] + ' to win the award'
@@ -55,7 +55,7 @@ client = InferenceClient(model=URI)
 #query="What did Ke Huy Quan work on?"
 #query="Which movie won the best music award?"
 #query="Did Lady Gaga win an award at Oscars 2023?"
-query="Who is the music director of RRR?"
+query="Lord of the rings"
 context=generate_context(query)
 
 print(context)
