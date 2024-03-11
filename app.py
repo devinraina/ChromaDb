@@ -5,7 +5,7 @@ def text_embedding(text) -> None:
     model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
     return model.encode(text, normalize_embeddings=True)
 
-phrase= 'a'
+phrase= 'apple is a fruit'
 embedding1= text_embedding(phrase)
 
 phrase2= 'apple iPhone is expensive'
