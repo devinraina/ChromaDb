@@ -1,8 +1,5 @@
 import pandas as pd
 import chromadb
-from sentence_transformers import SentenceTransformer
-import numpy as np
-import os
 
 df=pd.read_csv('./data/the_oscar_award.csv')
 df=df.loc[df['year_ceremony'] > 2015]
