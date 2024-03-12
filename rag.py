@@ -1,10 +1,7 @@
 import pandas as pd
 import chromadb
-from chromadb.utils import embedding_functions
 from sentence_transformers import SentenceTransformer
 from huggingface_hub import InferenceClient
-import numpy as np
-import os
 
 client = chromadb.Client()
 collection = client.get_or_create_collection("oscars-2023")
